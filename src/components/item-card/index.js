@@ -10,7 +10,7 @@ const {title, price, image} = item
     <View style={styles.itemCardContainer}>
       {/* <Image style={styles.itemCardImg} source={require(image)}/> */}
       <Text style={styles.itemCardTitle}>{title}</Text>
-      <Text style={styles.itemCardPrice}>{price}</Text>
+      <Text style={styles.itemCardPrice}>${price.toFixed(2)}</Text>
       <TouchableOpacity style={styles.itemCardBtn}>
         <Text style={styles.itemCardBtnTxt}>Comprar</Text>
       </TouchableOpacity>
