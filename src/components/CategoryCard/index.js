@@ -15,7 +15,7 @@ const CategoryCard = ({navigation}) => {
                 <Button
                 color='black'
                 title='Ver Más'
-                onPress={()=> navigation.navigate('PopularCategory') }/>
+                onPress={()=> navigation.navigate('Popular') }/>
             </View>
           </View>
         </View>

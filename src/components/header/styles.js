@@ -3,7 +3,6 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
 
     headerContainer:{
-        backgroundColor:'white',
         width:'100%',
         height:250,
         justifyContent:'center',

@@ -1,10 +1,11 @@
-import { FlatList, View} from 'react-native'
+import { FlatList, View, ScrollView} from 'react-native'
 import React from 'react'
+import { Header } from '../../components'
 import ItemList from '../../components/item-list/index'
 import CategoryCard from '../../components/CategoryCard/index'
 import {styles} from './styles'
 
-const Main = () => {
+const Main = ({navigation}) => {
 
     const products = [
         {
@@ -34,16 +35,19 @@ const Main = () => {
       ]
 
   return (
-    <View style={styles.mainContainer}>
-      <FlatList
-      showsHorizontalScrollIndicator={false}
-      horizontal={true}
-      data= {products}
-      keyExtractor= {(item) => item.id}
-      renderItem= {({item})=> <ItemList item={item}/>}
-      />
-      <CategoryCard/>
-    </View>
+    <ScrollView>
+      <Header/>
+      <View style={styles.mainContainer}>
+        <FlatList
+        showsHorizontalScrollIndicator={false}
+        horizontal={true}
+        data= {products}
+        keyExtractor= {(item) => item.id}
+        renderItem= {({item})=> <ItemList item={item}/>}
+        />
+        <CategoryCard navigation={navigation}/>
+      </View>
+    </ScrollView>
   )
 }
 

@@ -8,8 +8,18 @@ const Stack = createNativeStackNavigator();
 const ShopNavigator = () =>{
     return(
         <Stack.Navigator initialRouteName="Main">
-            <Stack.Screen name="Main" component={Main}/>
-            <Stack.Screen name="Popular" component={PopularCategory}/>
+            <Stack.Screen 
+                name="Main" 
+                component={Main} 
+                options={{
+                    headerShown: false,
+                }}/>
+            <Stack.Screen 
+                name="Popular" 
+                component={PopularCategory}
+                options={{
+                    headerShown: false,
+                }}/>
         </Stack.Navigator>
     )
 };

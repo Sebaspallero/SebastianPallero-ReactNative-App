@@ -5,13 +5,12 @@ const {height, width} = Dimensions.get('window')
 export const styles = StyleSheet.create({
 
     mainContainer:{
-        backgroundColor:'#F5F5F5',
-        height:'70%',
+        backgroundColor:'#E8E8E8',
         justifyContent:'center',
         alignItems:'center',
+        height: 600,
         borderTopLeftRadius: 60,
         borderTopRightRadius: 60,
-        
+        paddingTop:'10%',
     },
-    
 })

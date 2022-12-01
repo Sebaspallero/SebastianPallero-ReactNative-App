@@ -1,5 +1,4 @@
-import { View, ActivityIndicator, ScrollView} from 'react-native';
-import { Header} from './components/index';
+import { View, ActivityIndicator} from 'react-native';
 import { useFonts } from 'expo-font';
 import {styles} from './utils/styles';
 import AppNavigator from './navigation/index';
@@ -25,12 +24,8 @@ export default function App() {
   } 
 
   return (
-    <ScrollView>
-      <View style={styles.container}>
-        <Header/>
-        <AppNavigator/>
-      </View>
-    </ScrollView>
+    <AppNavigator/>
   );
 }
+
 
