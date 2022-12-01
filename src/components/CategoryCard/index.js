@@ -1,11 +1,8 @@
-import { View, Text, Image, Button,Alert } from 'react-native'
+import { View, Text, Image, Button } from 'react-native'
 import {styles} from './styles'
-import React, {useState} from 'react'
+import React from 'react'
 
-const CategoryCard = ({switchScreen}) => {
-
-    const [showPopular, setShowPopular] = useState(true)
-
+const CategoryCard = ({navigation}) => {
   return (
     <View style={styles.popularContainer}>
         <Text style={styles.popularTitle}>Popular</Text>
@@ -18,7 +15,7 @@ const CategoryCard = ({switchScreen}) => {
                 <Button
                 color='black'
                 title='Ver Más'
-                onPress={()=>switchScreen(showPopular)}/>
+                onPress={()=> navigation.navigate('PopularCategory') }/>
             </View>
           </View>
         </View>

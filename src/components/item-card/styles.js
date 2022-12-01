@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
         justifyContent:'center',
         alignItems:'center',
         backgroundColor:'#FFD046',
-        borderRadius:'50%',
+        borderRadius: 20,
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
