@@ -1,12 +1,14 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
+
     popularContainer:{
         justifyContent:'center',
         alignItems:'flex-start',
         width:'85%',
         marginVertical:5,
-        marginBottom:'10%'
+        marginBottom:'10%',
+        marginTop:'10%'
     },
 
     popularTitle:{
@@ -62,18 +64,10 @@ export const styles = StyleSheet.create({
         fontFamily:'Poppins-Regular',
         fontSize:15,
         marginVertical:5,
-        marginTop:15
     },
 
     PopularTextDescription:{
         fontFamily:'Poppins-Regular',
         fontSize:11
-    },
-
-    itemCardBtn:{
-        marginLeft:'55%',
-        marginTop:5,
-        marginBottom:5,
-    },
-    
+    }
 })

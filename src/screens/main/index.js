@@ -1,8 +1,9 @@
-import { FlatList, View, ScrollView} from 'react-native'
+import { FlatList, View, ScrollView, SafeAreaView} from 'react-native'
 import React from 'react'
-import { Header } from '../../components'
+import {Header}  from '../../components'
 import ItemList from '../../components/item-list/index'
 import CategoryCard from '../../components/CategoryCard/index'
+import FoodCategory from '../../components/foodCategory/index'
 import {styles} from './styles'
 
 const Main = ({navigation}) => {
@@ -35,19 +36,22 @@ const Main = ({navigation}) => {
       ]
 
   return (
-    <ScrollView>
-      <Header/>
-      <View style={styles.mainContainer}>
-        <FlatList
-        showsHorizontalScrollIndicator={false}
-        horizontal={true}
-        data= {products}
-        keyExtractor= {(item) => item.id}
-        renderItem= {({item})=> <ItemList item={item}/>}
-        />
-        <CategoryCard navigation={navigation}/>
-      </View>
-    </ScrollView>
+      <SafeAreaView>
+        <ScrollView  showsVerticalScrollIndicator={false}>
+          <Header/>
+          <View style={styles.mainContainer}>
+            <FlatList
+            showsHorizontalScrollIndicator={false}
+            horizontal={true}
+            data= {products}
+            keyExtractor= {(item) => item.id}
+            renderItem= {({item})=> <ItemList item={item}/>}
+            />
+            <CategoryCard navigation={navigation}/>
+            <FoodCategory navigation={navigation}/>
+          </View>
+        </ScrollView>
+      </SafeAreaView>
   )
 }
 

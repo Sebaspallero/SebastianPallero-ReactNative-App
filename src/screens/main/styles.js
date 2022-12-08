@@ -8,9 +8,8 @@ export const styles = StyleSheet.create({
         backgroundColor:'#E8E8E8',
         justifyContent:'center',
         alignItems:'center',
-        height: 600,
         borderTopLeftRadius: 60,
         borderTopRightRadius: 60,
-        paddingTop:'10%',
+        paddingTop:'18%',
     },
 })
