@@ -1,7 +1,7 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React from "react";
 
-import { Main, PopularCategory, Products } from "../screens";
+import { Main, PopularCategory, Products, Product } from "../screens";
 
 const Stack = createNativeStackNavigator();
 
@@ -23,9 +23,11 @@ const ShopNavigator = () =>{
             <Stack.Screen
                 name="Products"
                 component={Products}
-                options={{
-                    headerShown: false,
-                }}/>
+                />
+            <Stack.Screen
+                name="Product"
+                component={Product}
+                />
         </Stack.Navigator>
     )
 };

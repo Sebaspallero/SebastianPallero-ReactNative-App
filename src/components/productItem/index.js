@@ -4,13 +4,13 @@ import {styles} from './styles'
 
 const ProductItem = ({item, onSelected}) => {
   return (
-    <TouchableOpacity style={styles.popularContainer} onPress={()=> onSelected(item)}>
-        <View style={styles.popularCard}>
-          <Image style={styles.popularImg} source={require('../../../assets/pizza.jpg')}/>
-          <View style={styles.PopularDescriptionContainer}>
-            <Text style={styles.PopularText}>{item.title}</Text>
-            <Text style={styles.PopularTextDescription}>{item.description}</Text>
-            <Text>${item.price}</Text>
+    <TouchableOpacity style={styles.productContainer} onPress={()=> onSelected(item)}>
+        <View style={styles.productCard}>
+          <Image style={styles.productImg} source={require('../../../assets/pizza.jpg')}/>
+          <View style={styles.productDescriptionContainer}>
+            <Text style={styles.productText}>{item.title}</Text>
+            <Text style={styles.productTextDescription}>{item.description}</Text>
+            <Text style={styles.productPrice}>${item.price.toFixed(2)}</Text>
           </View>
         </View>
     </TouchableOpacity>

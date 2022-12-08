@@ -1,4 +1,4 @@
-import { FlatList } from 'react-native'
+import { FlatList, View, Text } from 'react-native'
 import React from 'react'
 import { PRODUCTS } from '../../constants/data'
 import {styles} from './styles'
@@ -10,18 +10,22 @@ const Products = ({navigation, route}) => {
 
     const filteredProducts = PRODUCTS.filter(product => product.categoryId == categoryId);
 
-    const onSelected = () =>{
-        null
+    const onSelected = (item) =>{
+        navigation.navigate('Product', {title: item.title, productId: item.id})
     }
 
     const renderItem = ({item}) => <ProductItem item={item} onSelected={onSelected}/>
 
   return (
-    <FlatList
-    data={filteredProducts}
-    renderItem={renderItem}
-    keyExtractor={(item) => item.id}
-    />
+    <View style={styles.productsContainer}>
+        <Text style={styles.categoryTitle}>{title}</Text>
+        <FlatList
+        style={styles.productListContainer}
+        data={filteredProducts}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.id}
+        />
+    </View>
   )
 }
 

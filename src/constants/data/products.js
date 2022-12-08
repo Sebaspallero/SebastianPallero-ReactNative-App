@@ -59,7 +59,7 @@ export const PRODUCTS = [
         id: 8,
         title: 'Empanada de Pollo',
         description:'lorem ipsum maledictus imperium plus ultra amicus curia habeas pax et gloria.',
-        categoryId: 1,
+        categoryId: 4,
         price: 5.10,
         image: 'FOTO DE MUESTRA'
     },
@@ -73,7 +73,7 @@ export const PRODUCTS = [
     },
     {
         id: 10,
-        title: 'Sandiwch de Pastrami',
+        title: 'Sandwich de Pastrami',
         description:'lorem ipsum maledictus imperium plus ultra amicus curia habeas pax et gloria.',
         categoryId: 5,
         price: 17.80,
