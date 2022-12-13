@@ -1,29 +1,35 @@
 import { FlatList, View, Text } from 'react-native'
-import React from 'react'
-import { PRODUCTS } from '../../constants/data'
+import React, {useEffect} from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { filterProducts, selectProduct } from '../../store/actions'
 import {styles} from './styles'
 import ProductItem from '../../components/productItem'
 
-const Products = ({navigation, route}) => {
+const Products = ({navigation}) => {
 
-    const {categoryId, title} = route.params;
+    const category = useSelector((state) => state.category.selected);
+    const filteredProducts = useSelector((state) => state.products.filteredProducts);
+    const dispatch = useDispatch();
 
-    const filteredProducts = PRODUCTS.filter(product => product.categoryId == categoryId);
+    useEffect(()=>{
+      dispatch(filterProducts(category.id))
+    }, []);
 
     const onSelected = (item) =>{
-        navigation.navigate('Product', {title: item.title, productId: item.id})
-    }
+        dispatch(selectProduct(item.id))
+        navigation.navigate('Product', {title: item.title})
+    };
 
     const renderItem = ({item}) => <ProductItem item={item} onSelected={onSelected}/>
 
   return (
     <View style={styles.productsContainer}>
-        <Text style={styles.categoryTitle}>{title}</Text>
+        <Text style={styles.categoryTitle}>{category.title}</Text>
         <FlatList
-        style={styles.productListContainer}
         data={filteredProducts}
         renderItem={renderItem}
-        keyExtractor={(item) => item.id}
+        keyExtractor={(item) => item.id.toString()}
+        style={styles.productListContainer}
         />
     </View>
   )
