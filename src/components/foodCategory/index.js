@@ -19,7 +19,7 @@ const FoodCategory = ({navigation}) => {
         
   return (
     <>
-        <Text style={styles.categoryTitle}>Categoria</Text>
+        <Text style={styles.categoryTitle}>Categorias</Text>
         <FlatList
             data={categories}
             horizontal={true}

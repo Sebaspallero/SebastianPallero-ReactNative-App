@@ -1,27 +1,27 @@
 export const CATEGORIES = [
     {
         id: 1,
-        title: 'hamburguesas',
+        title: 'Burgers',
         icon: '🍔'
     },
     {
         id: 2,
-        title: 'pizza',
+        title: 'Pizza',
         icon: '🍕'
     },
     {
         id: 3,
-        title: 'ensaladas',
+        title: 'Ensaladas',
         icon: '🥗'
     },
     {
         id: 4,
-        title: 'empanadas',
+        title: 'Empanadas',
         icon: '🥟'
     },
     {
         id: 5,
-        title: 'sandwiches',
+        title: 'Sandwiches',
         icon: '🥪'
     },
 ]

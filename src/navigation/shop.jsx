@@ -23,10 +23,16 @@ const ShopNavigator = () =>{
             <Stack.Screen
                 name="Products"
                 component={Products}
+                options={{
+                    headerShown: false,
+                }}
                 />
             <Stack.Screen
                 name="Product"
                 component={Product}
+                options={{
+                    headerShown: false,
+                }}
                 />
         </Stack.Navigator>
     )

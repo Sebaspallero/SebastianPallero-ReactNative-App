@@ -4,6 +4,7 @@ import {styles} from './utils/styles';
 import { Provider } from 'react-redux';
 import store from './store';
 import AppNavigator from './navigation/index';
+import { init } from './db';
 
 
 
@@ -24,6 +25,14 @@ export default function App() {
       </View>
     )
   } 
+
+  init()
+  .then(() => {
+    console.log("Initialized database");
+  })
+  .catch((err) => {
+    console.log("Initializing db failed.", err);
+  });
 
   return (
     <Provider store={store}>

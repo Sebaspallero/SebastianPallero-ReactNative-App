@@ -5,8 +5,6 @@ export const styles = StyleSheet.create({
         justifyContent:'center',
         alignItems:'flex-start',
         marginVertical:5,
-        
-        
     },
 
     productCard:{

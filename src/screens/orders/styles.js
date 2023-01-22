@@ -1,10 +1,16 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-    productDetailContainer:{
-        justifyContent:'center',
-        alignItems:'center',
-        marginTop:'30%'
+    ordersTitle:{
+        textAlign:'center',
+        fontFamily:'Poppins-Bold',
+        fontSize: 20,
+        marginVertical: '10%'
+        
+    },
+
+    ordersContainer:{
+        marginBottom: 50
     }
     
 

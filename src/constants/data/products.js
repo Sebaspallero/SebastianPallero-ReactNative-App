@@ -1,3 +1,15 @@
+import hamburguesaFrancesa from '../../../assets/images/hamburguesaFrancesa.jpg'
+import hamburguesaCheddar from '../../../assets/images/hamburguesaQueso.jpg'
+import pizzaMargarita from '../../../assets/images/pizzaMargarita.jpg'
+import pizzaPimiento from '../../../assets/images/pizzaPimiento.jpg'
+import ensaladaVerde from '../../../assets/images/ensaladaVerde.jpg'
+import ensaladaEspinaca from '../../../assets/images/ensaladaEspinaca.jpg'
+import empanadaCarne from '../../../assets/images/empanadaCarne.jpg'
+import empanadaPollo from '../../../assets/images/empanadaPollo.jpg'
+import sandwichPollo from '../../../assets/images/sandwichPollo.jpg'
+import sandwichBondiola from '../../../assets/images/sandwichBondiola.jpg'
+
+
 export const PRODUCTS = [
     {
         id: 1,
@@ -5,7 +17,7 @@ export const PRODUCTS = [
         description:'lorem ipsum maledictus imperium plus ultra amicus curia habeas pax et gloria.',
         categoryId: 1,
         price: 13.20,
-        image: 'FOTO DE MUESTRA'
+        image: hamburguesaCheddar
     },
     {
         id: 2,
@@ -13,7 +25,7 @@ export const PRODUCTS = [
         description:'lorem ipsum maledictus imperium plus ultra amicus curia habeas pax et gloria.',
         categoryId: 1,
         price: 16.80,
-        image: 'FOTO DE MUESTRA'
+        image: hamburguesaFrancesa
     },
     {
         id: 3,
@@ -21,31 +33,31 @@ export const PRODUCTS = [
         description:'Pizza hecha en horno de Leña, con base de tomate, mozzarella y albahaca.',
         categoryId: 2,
         price: 25.70,
-        image: 'FOTO DE MUESTRA'
+        image: pizzaMargarita
     },
     {
         id: 4,
-        title: 'Pizza con Ananá',
-        description:'Pizza hecha en horno de Leña, con base de tomate, mozzarella y albahaca.',
+        title: 'Pizza con Pimiento',
+        description:'Pizza hecha en horno de Leña, con base de tomate, mozzarella y Pimientos.',
         categoryId: 2,
         price: 27.50,
-        image: 'FOTO DE MUESTRA'
+        image: pizzaPimiento
     },
     {
         id: 5,
-        title: 'Ensalada Caesar',
+        title: 'Ensalada Verde',
         description:'lorem ipsum maledictus imperium plus ultra amicus curia habeas pax et gloria.',
         categoryId: 3,
         price: 13.50,
-        image: 'FOTO DE MUESTRA'
+        image: ensaladaVerde
     },
     {
         id: 6,
-        title: 'Ensalada Waldorf',
+        title: 'Ensalada de Espinaca',
         description:'lorem ipsum maledictus imperium plus ultra amicus curia habeas pax et gloria.',
         categoryId: 3,
         price: 11.20,
-        image: 'FOTO DE MUESTRA'
+        image: ensaladaEspinaca
     },
     {
         id: 7,
@@ -53,7 +65,7 @@ export const PRODUCTS = [
         description:'lorem ipsum maledictus imperium plus ultra amicus curia habeas pax et gloria.',
         categoryId: 4,
         price: 5.10,
-        image: 'FOTO DE MUESTRA'
+        image: empanadaCarne
     },
     {
         id: 8,
@@ -61,7 +73,7 @@ export const PRODUCTS = [
         description:'lorem ipsum maledictus imperium plus ultra amicus curia habeas pax et gloria.',
         categoryId: 4,
         price: 5.10,
-        image: 'FOTO DE MUESTRA'
+        image: empanadaPollo
     },
     {
         id: 9,
@@ -69,7 +81,7 @@ export const PRODUCTS = [
         description:'lorem ipsum maledictus imperium plus ultra amicus curia habeas pax et gloria.',
         categoryId: 5,
         price: 14.40,
-        image: 'FOTO DE MUESTRA'
+        image: sandwichPollo
     },
     {
         id: 10,
@@ -77,7 +89,7 @@ export const PRODUCTS = [
         description:'lorem ipsum maledictus imperium plus ultra amicus curia habeas pax et gloria.',
         categoryId: 5,
         price: 17.80,
-        image: 'FOTO DE MUESTRA'
+        image: sandwichBondiola
     },
 
 ]

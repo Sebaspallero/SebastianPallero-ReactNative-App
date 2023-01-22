@@ -11,7 +11,10 @@ const OrderNavigator = () =>{
             initialRouteName="Main">
                 <Stack.Screen
                 name="Orders"
-                component={Orders}/>
+                component={Orders}
+                options={{
+                    headerShown: false,
+                }}/>
         </Stack.Navigator>
     )
 }

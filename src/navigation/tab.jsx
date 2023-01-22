@@ -1,13 +1,18 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import {Ionicons} from '@expo/vector-icons'
+import { AntDesign } from '@expo/vector-icons';
 import ShopNavigator from "./shop";
 import CartNavigator from "./cart";
 import OrderNavigator from "./orders";
+import { useSelector } from "react-redux";
 
 const BottomTab = createBottomTabNavigator();
 
 const TabNavigator = () =>{
+
+    const cart = useSelector((state) => state.cart.items)
+
     return(
         <BottomTab.Navigator
             initialRouteName="ShopTab"
@@ -17,18 +22,13 @@ const TabNavigator = () =>{
                 component={ShopNavigator}
                 options={{
                     tabBarIcon:({focused}) => (
-                        <Ionicons 
-                        name={focused ? 'home' : 'home-outline'}
-                        size={24}
-                        color={'#A9A9A9'}/>
+                        <AntDesign 
+                        name={'home'}
+                        size={28}
+                        color={focused ? '#FFD046' : '#D3D3D3'}/>
                     ),
 
-                tabBarLabelStyle:{
-                    fontFamily:'Poppins-Regular',
-                    fontSize: 12
-                },
-
-                tabBarActiveTintColor: 'black'
+                    tabBarShowLabel: false
                 }}/>
 
             <BottomTab.Screen
@@ -37,17 +37,12 @@ const TabNavigator = () =>{
                 options={{
                     tabBarIcon:({focused}) => (
                         <Ionicons 
-                        name={focused ? 'newspaper' : 'newspaper-outline'}
-                        size={24}
-                        color={'#A9A9A9'}/>
+                        name={'newspaper-outline'}
+                        size={28}
+                        color={focused ? '#FFD046' : '#D3D3D3'}/>
                     ),
 
-                    tabBarLabelStyle:{
-                        fontFamily:'Poppins-Regular',
-                        fontSize: 12
-                    },
-                    
-                    tabBarActiveTintColor: 'black',
+                   tabBarShowLabel: false
                    
                     
                 }}/>
@@ -58,17 +53,18 @@ const TabNavigator = () =>{
                 options={{
                     tabBarIcon:({focused}) => (
                         <Ionicons 
-                        name={focused ? 'cart' : 'cart-outline'}
-                        size={24}
-                        color={'#A9A9A9'}/>
+                        name={'cart-outline'}
+                        size={28}
+                        color={focused ? '#FFD046' : '#D3D3D3'}/>
                     ),
 
-                    tabBarLabelStyle:{
-                        fontFamily:'Poppins-Regular',
-                        fontSize: 12
-                    },
+                    tabBarShowLabel: false,
 
-                    tabBarActiveTintColor: 'black', 
+                    tabBarBadge: cart.length == 0 ? null : cart.length,
+                    
+                    tabBarBadgeStyle:{
+                        fontFamily: 'Poppins-Regular'
+                    }
                 }}/>
         </BottomTab.Navigator>
     )

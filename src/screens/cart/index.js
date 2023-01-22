@@ -1,26 +1,104 @@
-import { View, Text, FlatList, TouchableOpacity } from 'react-native'
-import { styles } from './styles'
-import { CART } from '../../constants/data'
-import CartItem from '../../components/cartItem'
 import React from 'react'
+import { View, Text, FlatList, TouchableOpacity, SafeAreaView, Switch, ScrollView } from 'react-native'
+import { useSelector, useDispatch } from 'react-redux'
+import { MaterialIcons } from '@expo/vector-icons';
+import { useNavigation} from '@react-navigation/native'
 
-const Cart = () => {
+import { removeFromCart, confirmCart, insertOrderSQLite} from '../../store/actions/cart.actions'
+import { URL_GEOCODING } from "../../constants/maps";
+import CartItem from '../../components/cartItem'
+import { LocationSelector } from '../../components'
 
-    const onDelete = (item) =>{ console.warn(item)}
-    const renderItem = ({item}) => <CartItem item={item} onDelete={onDelete}/>
+import { styles } from './styles'
+import { useState } from 'react'
+
+
+const Cart = ({navigate}) => {
+
+  const cart = useSelector((state) => state.cart.items);
+  const total = useSelector((state) => state.cart.total);
+  const [address, setAddress] = useState(null)
+  const dispatch = useDispatch()
+
+  const [isEnabled, setIsEnabled] = useState(false);
+  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+
+  const navigation = useNavigation();
+
+
+  const onDelete = (id) =>{
+    dispatch(removeFromCart(id))
+  }
+
+  const onCreateOrder = () =>{
+
+        dispatch(confirmCart(cart, total, address));
+        navigation.navigate('Orders');
+        /* insertOrderSQLite(cart, total, address); */
+  }
+
+  const onLocationPicker = async (coords) =>{
+    try{
+
+      const response  = await fetch(URL_GEOCODING(coords?.lat, coords?.lng));
+
+      if (!response.ok) throw new Error("No se ha podido conectar al servicio");
+
+      const data = await response.json();
+
+      if (!data.results) throw new Error("No se ha podido encontrar la direccion");
+
+      setAddress(data.results[0].formatted_address);
+    }
+
+    catch(error){
+      console.log(error)
+      throw error
+    }
+
+  };
+    
+  const renderItem = ({item}) => <CartItem item={item} onDelete={onDelete}/>
 
   return (
-    <View>
-      <FlatList
-        data={CART}
-        renderItem={renderItem}
-        keyExtractor={(item)=> item.id}
+    <SafeAreaView>
+        <FlatList
+          ListHeaderComponent={
+          <>
+          <View style={styles.cartContainer}>
+            <Text style={styles.cartTitle}>Mi Orden</Text>
+            <View style={styles.deliveryContainer}>
+          <MaterialIcons name="pedal-bike" size={35} color="#3e3e3e" />
+          <View>
+            <Text style={styles.deliveryText}>Co-delivery</Text>
+            <Text style={styles.deliveryTextAccent}>15-30 min</Text>
+          </View>
+          <Switch
+            trackColor={{false: '#767577', true: '#3e3e3e'}}
+            thumbColor={isEnabled ? 'white' : 'white'}
+            onValueChange={toggleSwitch}
+            value={isEnabled}/>
+          </View>
+          <LocationSelector onLocationPicker={onLocationPicker} address={address}/>
+          </View>
+          </>}
+          data={cart}
+          renderItem={renderItem}
+          keyExtractor={(item)=> item.id}
+          showsVerticalScrollIndicator = {false}
+          ListFooterComponent={
+          <>
+            <TouchableOpacity
+              disabled={cart.length == 0}
+              style={styles.cartButton} 
+              onPress={onCreateOrder}>
+                <Text style={styles.cartBtnTextBold}>Confirmar</Text>
+                <Text style={styles.cartBtnText}>Total: ${total.toFixed(2)}</Text>
+            </TouchableOpacity>
+          </>
+          }
         />
-        <TouchableOpacity style={styles.cartButton}>
-            <Text>Confirmar</Text>
-            <Text>Total: $30</Text>
-        </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   )
 }
 

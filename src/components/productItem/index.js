@@ -6,7 +6,7 @@ const ProductItem = ({item, onSelected}) => {
   return (
     <TouchableOpacity style={styles.productContainer} onPress={()=> onSelected(item)}>
         <View style={styles.productCard}>
-          <Image style={styles.productImg} source={require('../../../assets/pizza.jpg')}/>
+          <Image style={styles.productImg} source={require=(item.image)}/>
           <View style={styles.productDescriptionContainer}>
             <Text style={styles.productText}>{item.title}</Text>
             <Text style={styles.productTextDescription}>{item.description}</Text>
