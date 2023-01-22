@@ -3,42 +3,62 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
     itemCardContainer:{
         width:300,
-        height:240,
+        height:320,
         marginHorizontal:15,
         marginVertical:10,
         justifyContent:'center',
         alignItems:'center',
-        backgroundColor:'#FFD046',
+        backgroundColor:'white',
         borderRadius: 20,
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
             height: 1,
         },
-        shadowOpacity: 0.20,
-        shadowRadius: 1.41,
+        shadowOpacity: 0.25,
+        shadowRadius: 2.51,
         
-        elevation: 2,
+        elevation: 3,
      
     },
+
+    imgBkg:{
+        justifyContent:'center',
+        alignItems:'center'
+    },
+
     itemCardImg:{
-        width:120,
-        height:100,
-        borderRadius:20
+        width:280,
+        height:140,
+        borderRadius:20,
     },
+
+    infoContainer:{
+        width: 280,
+        flexDirection: 'row',
+        justifyContent:'space-between',
+        alignItems:'center',
+        marginTop: '10%'
+    },
+
     itemCardTitle:{
-        marginTop:15,
-        fontFamily:'Poppins-Bold'
+        fontFamily:'Poppins-Regular',
+        fontSize: 15
     },
+
     itemCardPrice:{
-        marginTop:5,
-        fontFamily:'Poppins-Bold'
+        fontFamily:'Poppins-Bold',
+        fontSize: 15
     },
+
     itemCardBtn:{
-        backgroundColor:'white',
-        marginTop:15,
-        padding:10,
-        borderRadius:50,
+        backgroundColor:'#FFD046',
+        width: '90%',
+        justifyContent:'center',
+        alignItems:'center',
+        marginVertical: 25,
+        padding: 20,
+        borderRadius:20,
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
@@ -49,8 +69,15 @@ export const styles = StyleSheet.create({
         
         elevation: 2,
     },
+
     itemCardBtnTxt:{
-        fontFamily:'Poppins-Regular',
+        fontFamily:'Poppins-Bold',
+    },
+
+    itemDescription:{
+        fontFamily: 'Poppins-Regular',
+        marginTop: 40,
+        fontSize: 12
     }
 })
 

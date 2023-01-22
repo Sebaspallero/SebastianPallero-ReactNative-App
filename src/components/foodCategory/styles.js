@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
     categoryTitle:{
         fontFamily:'Poppins-Bold',
         fontSize:16,
-        marginRight:'65%',
+        marginLeft: '5%',
         marginVertical:15
     }
 

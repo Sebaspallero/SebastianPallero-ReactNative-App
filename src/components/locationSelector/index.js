@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity } from 'react-native'
 import React, {useState, useEffect} from 'react'
-import { useNavigation, useRoute } from '@react-navigation/native'
+import {useRoute } from '@react-navigation/native'
 import MapPreview from '../mapPreview/index'
 import { styles } from './styles'
 import { EvilIcons } from '@expo/vector-icons';
@@ -12,7 +12,6 @@ const LocationSelector = ({onLocationPicker, address}) => {
 
     const [pickedLocation, setPickedLocation] = useState(null);
 
-    const navigation = useNavigation();
     const route = useRoute()
 
     const mapLocation = route?.params?.mapLocation
@@ -46,12 +45,6 @@ const LocationSelector = ({onLocationPicker, address}) => {
         onLocationPicker({ lat: latitude, lng: longitude });
       };
 
-      const onHandleMapLocation = async() =>{
-        const isLocationPermission = await verifyPermission();
-        if (!isLocationPermission) return;
-        navigation.navigate('Main')
-      }
-
       useEffect (()=>{
         if(mapLocation){
             setPickedLocation(mapLocation);
@@ -76,9 +69,6 @@ const LocationSelector = ({onLocationPicker, address}) => {
       <View style={styles.preview}> 
         <MapPreview location={pickedLocation}/> 
       </View>}
-      {/* <View style={styles.buttonsContainer}>
-        <Button style={styles.button} title='Selección desde Mapa' onPress={onHandleMapLocation}/>
-      </View> */}
     </View>
   )
 }

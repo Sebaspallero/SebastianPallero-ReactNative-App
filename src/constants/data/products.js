@@ -16,6 +16,7 @@ export const PRODUCTS = [
         title: 'Hamburguesa Con Cheddar',
         description:'lorem ipsum maledictus imperium plus ultra amicus curia habeas pax et gloria.',
         categoryId: 1,
+        popular: false,
         price: 13.20,
         image: hamburguesaCheddar
     },
@@ -24,6 +25,7 @@ export const PRODUCTS = [
         title: 'Hamburguesa Francesa',
         description:'lorem ipsum maledictus imperium plus ultra amicus curia habeas pax et gloria.',
         categoryId: 1,
+        popular: true,
         price: 16.80,
         image: hamburguesaFrancesa
     },
@@ -32,6 +34,7 @@ export const PRODUCTS = [
         title: 'Pizza Margarita',
         description:'Pizza hecha en horno de Leña, con base de tomate, mozzarella y albahaca.',
         categoryId: 2,
+        popular: false,
         price: 25.70,
         image: pizzaMargarita
     },
@@ -40,6 +43,7 @@ export const PRODUCTS = [
         title: 'Pizza con Pimiento',
         description:'Pizza hecha en horno de Leña, con base de tomate, mozzarella y Pimientos.',
         categoryId: 2,
+        popular: true,
         price: 27.50,
         image: pizzaPimiento
     },
@@ -48,6 +52,7 @@ export const PRODUCTS = [
         title: 'Ensalada Verde',
         description:'lorem ipsum maledictus imperium plus ultra amicus curia habeas pax et gloria.',
         categoryId: 3,
+        popular: false,
         price: 13.50,
         image: ensaladaVerde
     },
@@ -56,6 +61,7 @@ export const PRODUCTS = [
         title: 'Ensalada de Espinaca',
         description:'lorem ipsum maledictus imperium plus ultra amicus curia habeas pax et gloria.',
         categoryId: 3,
+        popular: true,
         price: 11.20,
         image: ensaladaEspinaca
     },
@@ -64,6 +70,7 @@ export const PRODUCTS = [
         title: 'Empanada de Carne',
         description:'lorem ipsum maledictus imperium plus ultra amicus curia habeas pax et gloria.',
         categoryId: 4,
+        popular: false,
         price: 5.10,
         image: empanadaCarne
     },
@@ -72,6 +79,7 @@ export const PRODUCTS = [
         title: 'Empanada de Pollo',
         description:'lorem ipsum maledictus imperium plus ultra amicus curia habeas pax et gloria.',
         categoryId: 4,
+        popular: true,
         price: 5.10,
         image: empanadaPollo
     },
@@ -80,6 +88,7 @@ export const PRODUCTS = [
         title: 'Sandwich de Pollo',
         description:'lorem ipsum maledictus imperium plus ultra amicus curia habeas pax et gloria.',
         categoryId: 5,
+        popular: false,
         price: 14.40,
         image: sandwichPollo
     },
@@ -88,6 +97,7 @@ export const PRODUCTS = [
         title: 'Sandwich de Pastrami',
         description:'lorem ipsum maledictus imperium plus ultra amicus curia habeas pax et gloria.',
         categoryId: 5,
+        popular: true,
         price: 17.80,
         image: sandwichBondiola
     },

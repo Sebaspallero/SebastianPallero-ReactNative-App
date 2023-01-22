@@ -71,5 +71,27 @@ export const styles = StyleSheet.create({
         marginTop: 5
     },
 
+    carritoMsgContainer:{
+        borderRadius: 20,
+        padding: 30,
+        marginHorizontal: '6%',
+        marginTop: 20,
+        marginBottom: 5,
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        shadowOpacity: 0.20,
+        shadowRadius: 1.41,
+        
+        elevation: 2,
+        backgroundColor:'white',
+    },
+
+    carritoMsg:{
+        fontFamily: 'Poppins-Regular',
+        textAlign: 'center'
+    }
+
 
 })

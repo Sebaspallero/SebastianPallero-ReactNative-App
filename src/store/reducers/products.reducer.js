@@ -1,6 +1,6 @@
 import { productsTypes } from "../types/products.types";
 import { PRODUCTS } from "../../constants/data";
-const {FILTER_PRODUCTS, SELECT_PRODUCT} = productsTypes
+const {FILTER_PRODUCTS, SELECT_PRODUCT, POPULAR_PRODUCTS} = productsTypes
 
 const initialState = {
     products: PRODUCTS,

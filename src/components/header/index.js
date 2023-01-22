@@ -5,7 +5,8 @@ import {styles} from './styles'
 const Header = () => {
   return (
     <View style={styles.headerContainer}>
-      <Text style={styles.title}>Food Delivery</Text>
+      <Text style={styles.title}>Pronto</Text>
+      <Text style={styles.subTitle}>Food Delivery</Text>
     </View>
   )
 }

@@ -4,7 +4,8 @@ export const styles = StyleSheet.create({
     productContainer:{
         justifyContent:'center',
         alignItems:'flex-start',
-        marginTop: 20
+        marginTop: 20,
+        marginBottom: 15
     },
 
     productCard:{

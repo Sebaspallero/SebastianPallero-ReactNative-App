@@ -31,7 +31,7 @@ export default function App() {
     console.log("Initialized database");
   })
   .catch((err) => {
-    console.log("Initializing db failed.", err);
+    onsole.log("Initializing db failed.", err);
   });
 
   return (

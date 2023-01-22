@@ -11,3 +11,4 @@ export const filterProducts = (id) => ({
     type: FILTER_PRODUCTS,
     categoryId: id,
 });
+

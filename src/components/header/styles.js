@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
 
     headerContainer:{
         width:'100%',
-        height:250,
+        marginVertical: '12%',
         justifyContent:'center',
         alignItems:'flex-start'
     },
@@ -13,9 +13,15 @@ export const styles = StyleSheet.create({
         fontFamily:'Poppins-Bold',
         fontSize:30,
         color:'black',
-        marginTop:80,
         marginHorizontal:30,
         width:150
     },
+
+    subTitle:{
+        fontFamily: 'Poppins-Regular',
+        fontSize:18,
+        marginHorizontal:30,
+        color: '#A9A9AC'
+    }
     
 })

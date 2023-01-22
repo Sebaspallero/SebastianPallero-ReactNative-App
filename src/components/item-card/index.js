@@ -1,19 +1,19 @@
-import { View, Text,TouchableOpacity,Image } from 'react-native'
+import { View, Text,Image } from 'react-native'
 import React from 'react'
 import { styles } from './styles'
 
 const ItemCard = ({item}) => {
 
-const {title, price, image} = item
-
   return (
     <View style={styles.itemCardContainer}>
-      {/* <Image style={styles.itemCardImg} source={require(image)}/> */}
-      <Text style={styles.itemCardTitle}>{title}</Text>
-      <Text style={styles.itemCardPrice}>${price.toFixed(2)}</Text>
-      <TouchableOpacity style={styles.itemCardBtn}>
-        <Text style={styles.itemCardBtnTxt}>Comprar</Text>
-      </TouchableOpacity>
+      <View style={styles.imgBkg}>
+        <Image style={styles.itemCardImg} source={require=(item.image)}/>
+      </View>
+      <View style={styles.infoContainer}>
+        <Text style={styles.itemCardTitle}>{item.title}</Text>
+        <Text style={styles.itemCardPrice}>${item.price.toFixed(2)}</Text>
+      </View>
+      <Text style={styles.itemDescription} numberOfLines={2}>{item.description}</Text>
     </View>
   )
 }

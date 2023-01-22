@@ -1,6 +1,6 @@
 import { cartTypes } from "../types/cart.types";
 import { URL_API } from "../../constants/firebase";
-import insertOrder from '../../db/index'
+
 
 const {ADD_TO_CART, REMOVE_FROM_CART, CONFIRM_ORDER} = cartTypes;
 
@@ -48,8 +48,3 @@ export const confirmCart = (items, total, address) => {
   };
 };
 
-/* export const insertOrderSQLite = async(items, total, address) =>{
-
- const result = await insertOrder({id: Math.random(), items, total, address})
- 
-}; */

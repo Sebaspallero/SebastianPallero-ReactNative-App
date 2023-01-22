@@ -42,7 +42,6 @@ const Auth = ({navigation}) => {
     const [isLogged, setIsLogged] = useState(true)
     const dispatch = useDispatch();
 
-    const title = isLogged ? 'Ingresar' : 'Registrarse';
     const message = isLogged ? '¿No tienes una cuenta?' : 'Ya tengo una cuenta'
     const messageAction = isLogged ? 'Ingresar' : 'Registrarse'
 
