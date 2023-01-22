@@ -18,16 +18,34 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.sebaspallero.Pronto"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.sebaspallero.Pronto",
+      "permission": [
+        "ACCESS_FINE_LOCATION",
+        "WRITE_EXTERNAL_STORAGE"
+
+      ],
+      "config":{
+        "googleMaps":{
+          "apiKey":"AIzaSyAIxhaOuJoTZsMWTB8_4FrlT0xjheAkdVg"
+        }
       }
+      
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "4d02092a-eb09-4827-b9bc-28b20dd1363b"
+      }
     }
   }
 }
