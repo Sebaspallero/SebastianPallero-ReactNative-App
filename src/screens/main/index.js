@@ -15,20 +15,23 @@ const Main = ({navigation}) => {
       const popularProducts = PRODUCTS.filter(product => product.popular == true)
 
       const [userLocation, setUserLocation] = useState(null)
+     
 
       useEffect(()=>{
-        const loadDb = async() => {
-          try {
-            const result = await getOrder();
-            const address = (result?.rows?._array.map(address => address.address));
-            setUserLocation(address)
-          } 
-          catch (error) {
-            console.warn(error);
-            throw error;
-          }
-        };
-        loadDb();
+        navigation.addListener('focus', () => {
+          const loadDb = async() => {
+            try {
+              const result = await getOrder();
+              const address = (result?.rows?._array.map(address => address.address));
+              setUserLocation(address)
+            } 
+            catch (error) {
+              console.log(error);
+              throw error;
+            }
+          };
+          loadDb();
+        });
       },[]);
 
 
@@ -37,7 +40,7 @@ const Main = ({navigation}) => {
         <ScrollView  showsVerticalScrollIndicator={false}>
           <View style={styles.addressContainer}>
             <EvilIcons name="location" size={40} color="#FFD046"/>
-            <Text numberOfLines={1} style={styles.addressText}>{!userLocation ? 'No hay ubicacion' : userLocation}</Text>
+            <Text numberOfLines={1} style={styles.addressText}>{userLocation == 0 ? 'No hay ubicacion' : userLocation}</Text>
           </View>
           <Header/>
           <View style={styles.mainContainer}>
